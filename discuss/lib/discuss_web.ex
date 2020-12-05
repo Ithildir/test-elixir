@@ -22,6 +22,7 @@ defmodule DiscussWeb do
       use Phoenix.Controller, namespace: DiscussWeb
 
       import Plug.Conn
+      import DiscussWeb.Gettext
       alias DiscussWeb.Router.Helpers, as: Routes
     end
   end
@@ -53,6 +54,7 @@ defmodule DiscussWeb do
   def channel do
     quote do
       use Phoenix.Channel
+      import DiscussWeb.Gettext
     end
   end
 
@@ -65,6 +67,7 @@ defmodule DiscussWeb do
       import Phoenix.View
 
       import DiscussWeb.ErrorHelpers
+      import DiscussWeb.Gettext
       alias DiscussWeb.Router.Helpers, as: Routes
     end
   end
