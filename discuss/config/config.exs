@@ -33,7 +33,7 @@ config :ueberauth, Ueberauth,
 
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: "Iv1.47de651eb9b4773b",
-  client_secret: "dd789170b135cf4203857cee1da2097ce99b95aa"
+  client_secret: "CHANGEME"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
