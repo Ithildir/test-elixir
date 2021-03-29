@@ -63,6 +63,12 @@ defmodule DiscussWeb.TopicController do
     render(conn, "new.html", changeset: changeset)
   end
 
+  def show(conn, %{"id" => id}) do
+    topic = Repo.get!(Topic, id)
+
+    render(conn, "show.html", topic: topic)
+  end
+
   def update(conn, %{"id" => id, "topic" => topic}) do
     old_topic = Repo.get(Topic, id)
 
