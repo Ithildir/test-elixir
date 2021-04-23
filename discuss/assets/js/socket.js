@@ -5,7 +5,22 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 
 socket.connect()
 
-const commentTemplate = (comment) => `<li class="collection-item">${htmlEscape(comment.content)}</li>`;
+const commentTemplate = (comment) => {
+  let email = 'Anonymous';
+
+  if (comment.user) {
+    email = comment.user.email;
+  }
+
+  return `
+    <li class="collection-item">
+      ${htmlEscape(comment.content)}
+      <div class="secondary-content">
+        ${htmlEscape(email)}
+      </div>
+    </li>
+  `
+};
 
 const renderComment = (comment) => {
   const renderedComment = commentTemplate(comment);
